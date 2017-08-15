@@ -36,7 +36,24 @@ client.on('message', message => {
     message.reply('You\'re pretty stupid too, if you\'re talking to a bot, just saying.');
   }
   if(command === "lythrio" || command === "Lythrio"){
-    message.reply('Who, me? I think you\'re mistaken.');
+    const embed = new Discord.RichEmbed()
+    .setFooter("About Me | Lythrio")
+    .setTitle("")
+    .addField("About Me", "Hello, my name is Lythrio. I am a bot specially made for LythrioSurvival. Which strives on providing the best survival gameplay! I hope you join it!")
+    .addField("<3", "I was coded with love by Chewwy. <3, and he's always looking for new ways to improve me! So please do leave a suggestion, and he may add it to me! (:")
+  message.channel.send({embed});
+  }
+  if(command === "commands" || command === "Commands"){
+    const embed = new Discord.RichEmbed()
+    .setFooter("Commands | Lythrio")
+    .setTitle("")
+    .addField("Information", "Hello, and thank-you for using Lythrio! There are many features and commands for you to try out. Bellow this message will be the command list with the description/information of the command.")
+    .addField("Ping", "Use ~>ping to get a hilarious response. (Also used to test your connection speed, so it's really a 2 in 1!")
+    .addField("Joke", "Use ~>joke to get a hilarious joke read to you, by the bot! What else could be better than that? (Warning, it's the same joke everytime. lel.)")
+    .addField("Lythrio", "Use ~>lythrio to get information about the bot. (Warning, the bot can be sarcastic. Use at your own risk!)")
+    .addField("Stupid", "Use ~>stupid to tell the bot what you really think about it! (Cannot guarantee it's not going to say a sarcastic answer back to you.)")
+    .addField("Help", "Use ~>help to get a list of information for the server. Including the Server IP, Website information, and much, much more. It will also tell you if the server is online or not!")
+  message.channel.send({embed});
   }
 });
 
